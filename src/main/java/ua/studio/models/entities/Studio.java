@@ -21,6 +21,8 @@ public class Studio {
     @Setter(AccessLevel.NONE)
     private UUID id;
     private String name;
+    @ElementCollection
+    private List<String> pictures;
     private String city;
     private String address;
     private Time timeStarts;
@@ -40,4 +42,13 @@ public class Studio {
     private User manager;
     @OneToMany(mappedBy = "studio")
     private List<Reviews> reviews;
+
+    public Studio(String name, String city, String address, String description, Double price, User manager) {
+        this.name = name;
+        this.city = city;
+        this.address = address;
+        this.description = description;
+        this.price = price;
+        this.manager = manager;
+    }
 }

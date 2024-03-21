@@ -30,4 +30,15 @@ public class Reservation {
     private User customer;
     @ManyToOne
     private Studio studio;
+
+    public Reservation(String clientName, String clientSurname, String clientEmail, String promo, PaymentType paymentType, Timestamp start, User customer, Studio studio) {
+        this.clientName = clientName;
+        this.clientSurname = clientSurname;
+        this.clientEmail = clientEmail;
+        this.promo = promo;
+        this.paymentType = paymentType;
+        this.start = start;
+        this.customer = customer;
+        this.studio = studio;
+    }
 }
