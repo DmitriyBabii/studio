@@ -1,0 +1,17 @@
+.nav-bar {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-bar>* {
+    color: #9DA09E;
+}
+
+.nav-bar>*:nth-last-child(1) {
+    color: #09110D;
+}
+
+.nav-bar>*:nth-last-child(n+2)::after {
+    content: '/';
+    margin-left: 16px;
+}

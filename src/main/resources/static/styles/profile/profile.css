@@ -1,0 +1,49 @@
+.content {
+    flex-direction: column;
+}
+
+.selected {
+    background-color: #339966;
+    color: white;
+}
+
+.profile {
+    display: flex;
+
+    width: 100%;
+}
+
+.profile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    width: 200px;
+}
+
+.profile-nav>a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+
+    height: 50px;
+    padding-left: 16px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.profile-nav img {
+    width: 16px;
+    height: 16px;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    width: 100%;
+    padding: 24px 30px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+}

@@ -1,0 +1,86 @@
+.profile-section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 300;
+
+    margin: 0;
+}
+
+.owner {
+    position: relative;
+    display: inline-block;
+
+    top: -8px;
+
+    padding: 4px 8px;
+    background-color: #EBF5F0;
+    border-radius: calc(25px / 2);
+
+    font-size: 14px;
+    color: #339966;
+    text-align: center;
+}
+
+.edit-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 75px;
+    height: 35px;
+    background-color: #339966;
+    border-radius: 4px;
+
+    color: white;
+}
+
+.profile-user-data {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.profile-user-data>* {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    height: 50px;
+}
+
+.profile-user-data-title {
+    color: #939597;
+}
+
+.profile-user-data-value {
+    font-size: 18px;
+}
+
+.profile-user-password {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.profile-user-password-title {
+    font-size: 32px;
+    font-weight: 300;
+}
+
+.profile-user-password-change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 160px;
+    height: 35px;
+    background-color: #339966;
+    border-radius: 4px;
+
+    color: white;
+}

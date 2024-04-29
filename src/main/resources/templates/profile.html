@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/general/normalize.css">
+    <link rel="stylesheet" href="../static/styles/general/general.css">
+    <link rel="stylesheet" href="../static/styles/general/navbar.css">
+    <link rel="stylesheet" href="../static/styles/profile/profile.css">
+    <link rel="stylesheet" href="../static/styles/profile/user-profile.css">
+    <title>Document</title>
+    <style>
+        .profile-section-nav {
+            display: flex;
+
+
+            width: 100%;
+            height: 35px;
+            border-radius: calc(35px / 2);
+            box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+            overflow: hidden;
+        }
+
+        .profile-section-nav>* {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .nav-selected {
+            border-radius: calc(35px / 2);
+            background-color: #339966;
+            color: white;
+        }
+
+        .empty {
+            height: 350px;
+            background-image: url(../static/images/profile/empty.png);
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+
+
+
+
+
+        .order {
+            display: flex;
+            gap: 30px;
+
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #F2F3F3;
+            border-radius: 4px;
+        }
+
+        .order-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            width: 100%;
+        }
+
+        .order-title {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .order-name {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .order-status {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            font-size: 14px;
+        }
+
+        .order-status::before {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .completed {
+            color: #9DA09E;
+        }
+
+        .completed::before {
+            background-color: #9DA09E;
+        }
+
+        .wait-accept {
+            color: #E89E0A;
+        }
+
+        .wait-accept::before {
+            background-color: #E89E0A;
+        }
+
+        .order-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .order-section:nth-child(n + 3)::before {
+            content: '';
+            display: block;
+
+            height: 1px;
+            width: 100%;
+            margin-bottom: 8px;
+            background-color: #F2F3F3;
+        }
+
+        .order-section-part {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .order-section-part-name {
+            color: #9DA09E;
+        }
+
+
+
+
+
+
+
+
+
+
+        .order-studio-info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            flex: 420px 0 0;
+        }
+
+        .order-studio-info img {
+            width: 100%;
+        }
+
+        .studio-title {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .studio-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        .studio-greeting {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .studio-name {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .studio-rating {
+            display: flex;
+            gap: 4px;
+        }
+
+        .studio-rating::before {
+            display: block;
+            content: '';
+            width: 16px;
+            height: 16px;
+            background-image: url(../static/images/star.svg);
+        }
+
+        .studio-reviews {
+            color: #9DA09E;
+        }
+
+        .studio-price-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #339966;
+        }
+
+        .studio-price-per {
+            font-weight: 350;
+        }
+
+        .studio-address {
+            color: #9DA09E;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="nav-bar">
+            <a href="#">Start page</a>
+            <a href="#">Catalog</a>
+        </div>
+        <div class="profile">
+            <div class="profile-nav">
+                <a href="#" class="personal selected">
+                    <img src="../static/images/profile/white/account_circle.svg" alt="history">
+                    <span>Personal Data</span>
+                </a>
+                <a href="#" class="history">
+                    <img src="../static/images/profile/black/history.svg" alt="history">
+                    <span>Order history</span>
+                </a>
+                <a href="#" class="favourite">
+                    <img src="../static/images/profile/black/bookmark.svg" alt="bookmark">
+                    <span>Favourite</span>
+                </a>
+                <a href="#" class="logout">
+                    <img src="../static/images/profile/black/logout.svg" alt="logout">
+                    <span>Logout</span>
+                </a>
+            </div>
+            <!-- <div class="profile-section">
+                <div class="profile-section-title">
+                    <h1>Contacts <span class="owner">Owner</span></h1>
+                    <a href="#" class="edit-profile">Edit</a>
+                </div>
+                <div class="profile-user-data">
+                    <div>
+                        <div class="profile-user-data-title">Name:</div>
+                        <div class="profile-user-data-value">John</div>
+                    </div>
+                    <div>
+                        <div class="profile-user-data-title">Surname:</div>
+                        <div class="profile-user-data-value">Doe</div>
+                    </div>
+                    <div>
+                        <div class="profile-user-data-title">E-mail:</div>
+                        <div class="profile-user-data-value">mymail.test@gmail.com</div>
+                    </div>
+                </div>
+                <div class="profile-user-password">
+                    <div class="profile-user-password-title">Password</div>
+                    <a href="#" class="profile-user-password-change">Change password</a>
+                </div>
+            </div> -->
+            <div class="profile-section">
+                <div class="profile-section-nav">
+                    <div class="nav-selected">Active</div>
+                    <div>Past</div>
+                </div>
+                <div class="order-history">
+                    <div class="order">
+                        <div class="order-info">
+                            <div class="order-title">
+                                <div class="order-name">Order#00001</div>
+                                <div class="order-status completed">Completed</div>
+                            </div>
+                            <div class="order-section">
+                                <div class="order-section-part">
+                                    <div class="order-section-part-name">Date</div>
+                                    <div class="order-section-part-value">12/12/2023</div>
+                                </div>
+                            </div>
+                            <div class="order-section">
+                                <div class="order-section-part">
+                                    <div class="order-section-part-name">Full name</div>
+                                    <div class="order-section-part-value">John Doe</div>
+                                </div>
+                                <div class="order-section-part">
+                                    <div class="order-section-part-name">E-mail</div>
+                                    <div class="order-section-part-value">mymail.test@gmail.com</div>
+                                </div>
+                                <div class="order-section-part">
+                                    <div class="order-section-part-name">Phone number</div>
+                                    <div class="order-section-part-value">+38(066)666-66-66</div>
+                                </div>
+                            </div>
+                            <div class="order-section">
+                                <div class="order-section-part">
+                                    <div class="order-section-part-name">Payment method</div>
+                                    <div class="order-section-part-value">Cash</div>
+                                </div>
+                                <div class="order-section-part">
+                                    <div class="order-section-part-name">Price</div>
+                                    <div class="order-section-part-value">1600 UAH</div>
+                                </div>
+                            </div>
+                            <div class="order-price">
+                                <div class="order-price-title">Total price</div>
+                                <div class="order-price-value">1600 UAH</div>
+                            </div>
+                        </div>
+                        <div class="order-studio-info">
+                            <img src="../static/images/studio.png" alt="studio">
+                            <div class="studio-title">
+                                <div class="studio-info">
+                                    <div class="studio-greeting">
+                                        <div class="studio-name">Capsula</div>
+                                        <div class="studio-rating">4.8</div>
+                                        <div class="studio-reviews">(3 відгуки)</div>
+                                    </div>
+                                    <div class="studio-price">
+                                        <span class="studio-price-value">800 UAH</span>
+                                        <span class="studio-price-per">/ hour</span>
+                                    </div>
+                                </div>
+                                <div class="studio-address">вул. Єлизавети Чавдар 12, Київ</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

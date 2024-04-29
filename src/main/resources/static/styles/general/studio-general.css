@@ -1,0 +1,122 @@
+.studio-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+
+    width: 100%;
+}
+
+.studio-title{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.studio-info{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.studio-greeting{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.studio-name{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.studio-rating{
+    display: flex;
+    gap: 4px;
+}
+
+.studio-rating::before{
+    display: block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url(../../images/star.svg);
+}
+
+.studio-reviews{
+    color: #9DA09E;
+}
+
+.studio-price-value{
+    font-size: 20px;
+    font-weight: 700;
+    color: #339966;
+}
+
+.studio-price-per{
+    font-weight: 350;
+}
+
+.studio-address{
+    color: #9DA09E;
+}
+
+.studio-time{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.studio-time::before{
+    display: block;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url(../../images/time.svg);
+}
+
+.studio-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    max-height: 72px;
+    overflow: hidden;
+}
+
+.studio-tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 32px;
+    padding: 4px 8px;
+    border: 1px solid #CECFCF;
+    border-radius: 4px;
+}
+
+.studio-learn-more{
+    display: flex;
+    gap: 8px;
+}
+
+
+.studio-learn-more>*{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    border-radius: 4px;
+}
+
+.book-now{
+    height: 40px;
+    background-color: #339966;
+
+    color: white;
+}
+
+.more-detail{
+    border: 1px solid black;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/general/normalize.css">
+    <link rel="stylesheet" href="../static/styles/general/general.css">
+    <link rel="stylesheet" href="../static/styles/reservation/reservaton.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="content">
+        <a href="#" class="back-to">Back to catalog</a>
+        <form action="/" method="post">
+            <div class="reservation">
+                <h1>Reservation</h1>
+                <div class="contact-data">
+                    <span class="reservation-section">Contact data</span>
+                    <div class="reservation-name">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="text" name="surname" placeholder="Surname" required>
+                    </div>
+                    <input type="email" name="email" placeholder="Email address" required>
+                    <input type="text" name="phone" placeholder="Phone number" required>
+                </div>
+                <div class="reservation-date">
+                    <span class="reservation-section">Pick up date & time</span>
+                    <input type="datetime-local" name="date" id="dateInput" required>
+                    <script>
+                        const today = new Date();
+                        const nextDay = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 1);
+                        const field = document.getElementById("dateInput")
+
+                        const formattedNextDay = nextDay.toISOString().slice(0, 10);
+
+                        field.value = formattedNextDay + 'T09:00';
+                        field.min = formattedNextDay;
+
+                        field.onchange = function () {
+                            const inputDate = new Date(this.value);
+                            if (isNaN(inputDate) || inputDate < nextDay) {
+                                this.value = formattedNextDay;
+                            }
+                        };
+                    </script>
+                </div>
+                <div class="reservation-payment">
+                    <span class="reservation-section">How would you like to pay?</span>
+                    <label class="reservation-radio"><input type="radio" name="payment" value="cash">Cash</label>
+                    <label class="reservation-radio"><input type="radio" name="payment" value="card-transfer">Card
+                        transfer</label>
+                </div>
+            </div>
+            <div class="reservation-studio">
+                <div class="studio">
+                    <img src="../static/images/studio.png" alt="studio">
+                    <div class="studio-title">
+                        <div class="studio-greeting">
+                            <div class="studio-name">Capsula</div>
+                            <div class="studio-ratings">
+                                <div class="studio-rating">4.8</div>
+                                <div class="studio-reviews">(3 відгуки)</div>
+                            </div>
+                        </div>
+                        <div class="studio-address">вул. Єлизавети Чавдар 12, Київ</div>
+                    </div>
+                    <div class="studio-time">ПН-НД: 09:00 - 21:00</div>
+                    <div class="studio-tags">
+                        <div class="studio-tag">Cyclorama</div>
+                        <div class="studio-tag">Additional light</div>
+                        <div class="studio-tag">Color backgrounds</div>
+                        <div class="studio-tag">Neutral</div>
+                        <div class="studio-tag">Universal</div>
+                    </div>
+                </div>
+                <div class="reservation-promo">
+                    <input type="text" name="promo" placeholder="I have promo">
+                    <button>Book</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
